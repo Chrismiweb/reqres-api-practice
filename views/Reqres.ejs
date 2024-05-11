@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .screen{
+            width: 100%;
+            height: 100vh;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .container{
+            /* width: 90%; */
+            border-radius: 10px;
+            background-color: white;
+            padding: 20px 20px;
+            display: grid;
+            gap: 100px;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-left: 60px;
+            box-shadow: 2px 2px 10px 1px black;
+
+        }
+        .infos{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        span{
+            font-size: bold;
+            color: red;
+        }
+        .infos img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+            <h1 style="font-size: 20px;">REQRES API ASSIGMENT</h1>
+            <p>Built by CHRISMI</p>
+        <div class="container">
+           <% myReqres_assignment.forEach((use)=>{%>
+            <div class="infos">
+                <p><span>First Name:</span> <%= use.first_name %> </p>
+                <p><span>Last Name:</span> <%= use.last_name %> </p>
+                <p><span>Email:</span> <%= use.email %> </p>
+                <img src="<%= use.image %>" alt="">
+            </div>
+           <% })%>
+        </div>
+    </div>
+</body>
+</html>
